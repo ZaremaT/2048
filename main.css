@@ -1,1 +1,21 @@
 main.css
+
+body {
+    background-color: yellow;
+  
+    h1 {
+      text-align: left;
+      font-size: 4em;
+      color: white;
+    };
+
+.cell {
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100px;
+    width: 20px;
+    border: solid;
+    border-color: black;
+    background-color: white;
+  }
