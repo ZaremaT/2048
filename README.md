@@ -19,11 +19,14 @@ Each time two blocks unite together - numbers multiply by 2. The goal is to get 
 
 ## Proposal Steps
 
-* Create 4x4 gameboard with 16 tiles.
-* At the begining of the game gameboard already has with random values of 2 or 4.
-* Create arrows that will allow to transpose values into 4 different direction.
+* Create 4x4 gameboard with 16 tiles using HTML divs and assigning
+* At the begining of the game gameboard already has with random values of 2 or 4. This involves creating "New Game" button
+* Create arrows that will allow to transpose values into 4 different direction. This involves:
+- addEventListener
+-function keyPressed
+-if statements
 * Create a function that will unite collided equal values after transpose.
-* New random values of 2 or 4 should appear on a vacant tile of gameboard after each move.
+* New random values of 2 or 4 should appear on a vacant tile of gameboard after each move. To generate random number by using Math.floor(Math.random)
 * Create a function that will test if player lost or won.
 
 
