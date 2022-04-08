@@ -1,4 +1,4 @@
-
+const maxSize = 4;
 document.addEventListener('DOMContentLoaded', run);
 
 function run() {
@@ -20,7 +20,16 @@ function keyPressed(e) {
     }
 }
 function keyDown() {
-    console.log("down");
+    console.log("down"); let sum = 0;
+    for (let i = 0; i < maxSize; i++) {
+        let val = parseInt(document.getElementById('t' + i + '.0').innerText);
+        if (val) {
+            sum = sum + val
+        }
+        console.log(document.getElementById('t' + i + '.0').innerText)
+    }
+
+    console.log(sum);
 }
 
 function keyUp() {
