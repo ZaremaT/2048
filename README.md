@@ -19,7 +19,7 @@ Each time two blocks unite together - numbers multiply by 2. The goal is to get 
 
 ## Proposal Steps
 
-* Create 4x4 gameboard with 16 tiles using HTML divs and assigning
+* Create 4x4 gameboard with 16 tiles using HTML divs .
 * At the begining of the game gameboard already has with random values of 2 or 4. This involves creating "New Game" button
 * Create arrows that will allow to transpose values into 4 different direction. This involves:
 - addEventListener
