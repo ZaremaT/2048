@@ -3,8 +3,12 @@ document.addEventListener('DOMContentLoaded', run);
 
 function run() {
     document.addEventListener('keydown', keyPressed);
-   document.getElementById(pickEmptyTileId()).innerText = generateNumber();
-   document.getElementById(pickEmptyTileId()).innerText = generateNumber();
+    addRandomNumber();
+    addRandomNumber();
+}
+
+function addRandomNumber() {
+    document.getElementById(pickEmptyTileId()).innerText = generateNumber();
 }
 
 function keyPressed(e) {
@@ -49,18 +53,32 @@ function keyUp() {
 }
 
 function keyRight() {
-    console.log("right");
     for (let i = 0; i < maxSize; i++) {
-        let sum = 0;
-        for (let j = 0; j < maxSize; j++) {
-            let val = parseInt(document.getElementById(id(i,j)).innerText);
+        let prev;
+        let prev_idx = maxSize -1;
+        for (let j = maxSize - 1; j >=0; j--) {
+            let elem =  document.getElementById(id(i, j));
+            let val = parseInt(elem.innerText);
             if (val) {
-                sum = sum + val
-            }
-            console.log(document.getElementById(id(i,j)).innerText)
+                elem.innerText = '';
+                if (prev) {
+                    if (prev === val) {
+                        document.getElementById(id(i, prev_idx)).innerText = val + prev;
+                        prev = null;
+                        prev_idx--;
+                    } else {
+                        prev = val;
+                    }
+                } else {
+                    elem.innerText = val;
+                    prev = val;
+                    prev_idx = j;
+                }
+
+            }            
         }
-        console.log(sum);
     }
+    addRandomNumber();
 }
 
 function keyLeft() {
