@@ -12,7 +12,7 @@ function addRandomNumber() {
     if (id) {
         document.getElementById(pickEmptyTileId()).innerText = generateNumber();
     } else {
-        alert("No more empty tiles left!");
+        alert("No more empty tiles left, but still some moves!");
     }
 }
 
@@ -31,28 +31,28 @@ function keyPressed(e) {
 // swipe down
 function keyDown() {
   
-    for (let j = 0; j < maxSize; i++) {
+    for (let j = 0; j < maxSize; j++) {
         let prev;
         let prev_idx = maxSize - 1;
-        for (let i = 0; i < maxSize - 1; i++) {
+        for (let i = maxSize-1 ; i >= 0; i--) {
             let elem = document.getElementById(id(i, j));
             let val = parseInt(elem.innerText); 
             if (val) {
                 elem.innerText = '';  
                 if (prev) {
                     if (prev === val) {
-                        document.getElementById(id(i, prev_idx)).innerText = val + prev;
+                        document.getElementById(id(prev_idx, j)).innerText = val + prev;
                         prev = null;
-                        prev_idx--;
+                        prev_idx++;
                     } else {
                         prev = val;
-                        prev_idx--;
-                        document.getElementById(id(i, prev_idx)).innerText = val;
+                        prev_idx++;
+                        document.getElementById(id(prev_idx, j)).innerText = val;
                     }
                 } else {
-                    document.getElementById(id(i, prev_idx)).innerText = val; 
+                    document.getElementById(id(prev_idx, j)).innerText = val; 
                     prev = val;
-                    prev_idx = j;
+                    prev_idx = i;
                 }
             }
         }
