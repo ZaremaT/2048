@@ -29,33 +29,68 @@ function keyPressed(e) {
     }
 }
 // swipe down
-
 function keyDown() {
-    console.log("down"); let sum = 0;
-    for (let i = 0; i < maxSize; i++) {
-        let val = parseInt(document.getElementById(id(i, 0)).innerText);
-        if (val) {
-            sum = sum + val
+  
+    for (let j = 0; j < maxSize; i++) {
+        let prev;
+        let prev_idx = maxSize - 1;
+        for (let i = 0; i < maxSize - 1; i++) {
+            let elem = document.getElementById(id(i, j));
+            let val = parseInt(elem.innerText); 
+            if (val) {
+                elem.innerText = '';  
+                if (prev) {
+                    if (prev === val) {
+                        document.getElementById(id(i, prev_idx)).innerText = val + prev;
+                        prev = null;
+                        prev_idx--;
+                    } else {
+                        prev = val;
+                        prev_idx--;
+                        document.getElementById(id(i, prev_idx)).innerText = val;
+                    }
+                } else {
+                    document.getElementById(id(i, prev_idx)).innerText = val; 
+                    prev = val;
+                    prev_idx = j;
+                }
+            }
         }
-        console.log(document.getElementById(id(i, 0)).innerText)
     }
-
-    console.log(sum);
+    addRandomNumber();
 }
 
 //swipe up
 function keyUp() {
-    console.log("up");
-    let sum = 0;
-    for (let i = 0; i < maxSize; i++) {
-        let val = parseInt(document.getElementById(id(i, 1)).innerText);
-        if (val) {
-            sum = sum + val
+    for (let j = 0; j < maxSize; j++) {
+        let prev;
+        let prev_idx = 0;
+        for (let i = 0; i < maxSize ; i++) {
+            let elem = document.getElementById(id(i, j));
+            let val = parseInt(elem.innerText); 
+            if (val) {
+                elem.innerText = ''; 
+                if (prev) {
+                    if (prev === val) {
+                        document.getElementById(id(prev_idx, j)).innerText = val + prev;
+                        prev = null;
+                        prev_idx++;
+                    } else {
+                        prev = val;
+                        prev_idx++;
+                        document.getElementById(id(prev_idx, j)).innerText = val;
+                    }
+                } else {
+                    document.getElementById(id(prev_idx, j)).innerText = val; //prev_idx = last right tile
+                    prev = val;
+                    prev_idx = i;
+                }
+            }
         }
-        console.log(document.getElementById(id(i, 1)).innerText)
     }
-    console.log(sum);
+    addRandomNumber();
 }
+
 
 function keyRight() {
     for (let i = 0; i < maxSize; i++) {
