@@ -15,9 +15,9 @@ function addRandomNumber() {
         alert("No more empty tiles left, but still some moves!");
     }
 }
- function gameOver() {
-     const id = 
- }
+//  function gameOver() {
+//      const id = 
+//  }
 
 
 function keyPressed(e) {
@@ -56,7 +56,6 @@ function keyDown() {
                 } else {
                     document.getElementById(id(prev_idx, j)).innerText = val; 
                     prev = val;
-                    prev_idx = i;
                 }
             }
         }
@@ -87,7 +86,6 @@ function keyUp() {
                 } else {
                     document.getElementById(id(prev_idx, j)).innerText = val; //prev_idx = last right tile
                     prev = val;
-                    prev_idx = i;
                 }
             }
         }
@@ -118,7 +116,6 @@ function keyRight() {
                 } else {
                     document.getElementById(id(i, prev_idx)).innerText = val; //prev_idx = last right tile
                     prev = val;
-                    prev_idx = j;
                 }
             }
         }
@@ -148,7 +145,6 @@ function keyLeft() {
                 } else {
                     document.getElementById(id(i, prev_idx)).innerText = val;
                     prev = val;
-                    prev_idx = j;
                 }
             }
         }
