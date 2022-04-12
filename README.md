@@ -1,9 +1,8 @@
 
 # 2048
 
-## Projecr Description
-Single player on WEB or mobile application that let you move blocks of tiles with numbers on it.
-Each time two blocks unite together - numbers multiply by 2. The goal is to get to number 2048 or higher. Player loses the game when no more possible moves available. Layout of the page will show the layout of the game with puzzle blocks, name of the game, block for current score, block for best score, move arrows and a line of the one main rule.
+## Project Description
+Layout of the page shows the layout of the 4x4 boardgame with 16 tiles, buttons to start the game or refreshe it, name of the game, block for current score, block for best score, move arrows and a line of the one main rule. Single player moves tiles with numbers 2 or 4. Each time two tiles with same numbers unite together - teir total sum appears in a tile. The goal is to get to number 2048 or higher. Player loses the game when no more possible moves available. 
 
 ## Wireframes
 
@@ -30,6 +29,15 @@ Each time two blocks unite together - numbers multiply by 2. The goal is to get 
 * Create a function that will test if player lost or won.
 
 
+## Technologies:
+* HTML
+* Javascript
+* CSS
+
+# Future Enhancement:
+* Different colors for tiles
+* Chanllenges with timer
+* Leadership Board
 
 
 
