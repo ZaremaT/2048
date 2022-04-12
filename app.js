@@ -15,6 +15,10 @@ function addRandomNumber() {
         alert("No more empty tiles left, but still some moves!");
     }
 }
+ function gameOver() {
+     const id = 
+ }
+
 
 function keyPressed(e) {
     console.log(e);
@@ -43,10 +47,10 @@ function keyDown() {
                     if (prev === val) {
                         document.getElementById(id(prev_idx, j)).innerText = val + prev;
                         prev = null;
-                        prev_idx++;
+                        prev_idx--;
                     } else {
                         prev = val;
-                        prev_idx++;
+                        prev_idx--;
                         document.getElementById(id(prev_idx, j)).innerText = val;
                     }
                 } else {
