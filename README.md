@@ -36,8 +36,9 @@ Layout of the page shows the layout of the 4x4 boardgame with 16 tiles, buttons 
 
 # Future Enhancement:
 * Different colors for tiles
-* Chanllenges with timer
+* Challenges with timer
 * Leadership Board
+* Best score display
 
 
 
