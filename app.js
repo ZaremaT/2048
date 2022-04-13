@@ -15,9 +15,7 @@ function addRandomNumber() {
         alert("No more empty tiles left, but still some moves!");
     }
 }
-//  function gameOver() {
-//      const id = 
-//  }
+
 
 
 function keyPressed(e) {
@@ -31,10 +29,15 @@ function keyPressed(e) {
     } else if (e.key === 'ArrowDown') {
         keyDown();
     }
+    youWin();
+    addRandomNumber();
+    dispalyScore();
 }
+
+//  function gameOver() 
+
 // swipe down
 function keyDown() {
-  
     for (let j = 0; j < maxSize; j++) {
         let prev;
         let prev_idx = maxSize - 1;
@@ -60,7 +63,6 @@ function keyDown() {
             }
         }
     }
-    addRandomNumber();
 }
 
 //swipe up
@@ -90,7 +92,6 @@ function keyUp() {
             }
         }
     }
-    addRandomNumber();
 }
 
 
@@ -120,7 +121,6 @@ function keyRight() {
             }
         }
     }
-    addRandomNumber();
 }
 
 function keyLeft() {
@@ -149,8 +149,8 @@ function keyLeft() {
             }
         }
     }
-    addRandomNumber();
 }
+
 
     function id(num1, num2) {
         return 't' + num1 + '.' + num2;
@@ -182,4 +182,29 @@ function keyLeft() {
             }
         }
         return tiles;
+    }
+
+    //function that test if you lost or win
+    function youWin() {
+        for (let i=0; i< maxSize; i++) {
+            for (let j = 0; j< maxSize; j++) {
+                if (parseInt(document.getElementById(id(i, j)).innerText) === 2048) {
+                    alert ('You Win!'); 
+                }
+            }
+        }
+    }
+
+    function dispalyScore() {
+        let score = 0
+        for (let i=0; i<maxSize; i++) {
+            for (let j=0; j< maxSize; j++) {
+                let val = parseInt(document.getElementById(id(i,j)).innerText)
+                if (val) {
+                    score = val + score
+                }
+            }
+        }
+        document.getElementById("score").innerText = score 
+
     }

@@ -19,13 +19,13 @@ Layout of the page shows the layout of the 4x4 boardgame with 16 tiles, buttons 
 ## Proposal Steps
 
 * Create 4x4 gameboard with 16 tiles using HTML divs .
-* At the begining of the game gameboard already has with random values of 2 or 4. This involves creating "New Game" button
+* At the begining of the game gameboard already has with random values of 2 or 4. 
 * Create arrows that will allow to transpose values into 4 different direction. This involves:
 - addEventListener
 -function keyPressed
 -if statements
 * Create a function that will unite collided equal values after transpose.
-* New random values of 2 or 4 should appear on a vacant tile of gameboard after each move. To generate random number by using Math.floor(Math.random)
+* Create function for new random values of 2 or 4 should appear on a vacant tile of gameboard after each move. To generate random number by using Math.floor(Math.random)
 * Create a function that will test if player lost or won.
 
 
